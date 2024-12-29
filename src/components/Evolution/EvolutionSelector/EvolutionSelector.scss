@@ -7,6 +7,45 @@
     color: #ff4c4c; // Красный акцент
   }
 
+  .search-bar {
+    margin: 20px 0;
+    input {
+      padding: 8px 16px;
+      margin-bottom: 20px;
+      border: 2px solid #ff4c4c;
+      border-radius: 4px;
+      background-color: #1e1e1e;
+      color: #ff4c4c;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 300px;
+      transition: background-color 0.3s;
+      &:focus {
+        background-color: #2a2a2a;
+        outline: none;
+        border-color: #ff4c4c;
+      }
+    }
+    button {
+      padding: 8px 16px;
+      margin-left: 10px;
+      background-color: #ff4c4c;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #e43e3e;
+      }
+    }
+  }
+
+  .searched-pokemon {
+    margin-bottom: 20px;
+  }
+
   .pokemon-list {
     display: flex;
     flex-wrap: wrap;
