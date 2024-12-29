@@ -56,7 +56,6 @@ const EvolutionSelector: React.FC<EvolutionSelectorProps> = ({ onSelect }) => {
   };
 
   if (loading) return <div className="evolution-selector">Loading...</div>;
-  if (error) return <div className="evolution-selector">{error}</div>;
 
   return (
     <div className="evolution-selector">
@@ -72,15 +71,23 @@ const EvolutionSelector: React.FC<EvolutionSelectorProps> = ({ onSelect }) => {
         />
         <button onClick={handleSearch}>Find</button>
       </div>
-
       {/* Если найден покемон */}
-      {searchedPokemon && (
-        <div className="searched-pokemon">
-          <button onClick={() => onSelect(searchedPokemon.name)} className="pokemon-button">
-            {searchedPokemon.name}
-          </button>
-        </div>
-      )}
+      <div className="searched-pokemon__wrapper">
+        {error ? (
+          <div className="error-message">{error}</div>
+        ) : searchedPokemon ? (
+          <div className="searched-pokemon">
+            <button
+              onClick={() => onSelect(searchedPokemon.name)}
+              className="pokemon-button"
+            >
+              {searchedPokemon.name}
+            </button>
+          </div>
+        ) : (
+          <div className="choose-message">Choose one</div>
+        )}
+      </div>
 
       {/* Список из 50 покемонов */}
       <div className="pokemon-list">

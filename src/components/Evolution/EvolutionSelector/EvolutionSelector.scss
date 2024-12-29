@@ -11,7 +11,6 @@
     margin: 20px 0;
     input {
       padding: 8px 16px;
-      margin-bottom: 20px;
       border: 2px solid #ff4c4c;
       border-radius: 4px;
       background-color: #1e1e1e;
@@ -42,9 +41,29 @@
     }
   }
 
-  .searched-pokemon {
+  .searched-pokemon__wrapper {
+    display: inline-flex; // Изменено на inline-flex, чтобы размер соответствовал контенту
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
     margin-bottom: 20px;
+    border: 2px dashed #ff4c4c; // Красная пунктирная рамка
+    border-radius: 8px;
+    background-color: #2a2a2a; // Темный фон для выделения
+    min-width: 150px; // Минимальная ширина
+    min-height: 80px; // Минимальная высота
+    max-width: fit-content; // Ограничение по ширине, чтобы блок не растягивался на всю ширину
+    max-height: fit-content; // Ограничение по высоте, чтобы блок не занимал больше места
+    box-sizing: border-box; // Учитываем рамки и паддинги в размерах
+
+    .choose-message{
+      color: #ff4c4c;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
   }
+
+
 
   .pokemon-list {
     display: flex;
@@ -67,5 +86,10 @@
       background-color: #ff4c4c; // Красный фон
       color: #1e1e1e; // Тёмный текст
     }
+  }
+
+  .error-message {
+    color: red;
+    font-size: 1rem;
   }
 }

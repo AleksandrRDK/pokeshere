@@ -7,7 +7,7 @@ interface EvolutionTreeProps {
 
 const EvolutionTree: React.FC<EvolutionTreeProps> = ({ evolutionChain }) => {
   if (evolutionChain.length === 0) {
-    return <p className="evolution-tree__empty">No evolution data available.</p>;
+    return <p className="evolution-tree__empty">Select a Pokémon to see its evolution tree.</p>;
   }
 
   const typeIcons: Record<string, string> = {

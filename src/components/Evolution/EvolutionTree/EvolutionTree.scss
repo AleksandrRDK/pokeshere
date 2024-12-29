@@ -14,6 +14,21 @@
       margin: 0;
   }
 
+  &__empty {
+    color: #ff4c4c; // Красный акцент
+    font-size: 1.2rem; // Умеренно крупный размер шрифта
+    text-align: center; // Центрирование текста
+    font-weight: bold; // Жирный шрифт для акцента
+    background-color: #1e1e1e; // Тёмный фон для выделения
+    padding: 10px; // Внутренние отступы для создания "карточки"
+    border-radius: 8px; // Сглаженные углы
+    border: 2px dashed #ff4c4c; // Пунктирная рамка в стиле покемонов
+    margin: 20px auto; // Автоматические отступы для выравнивания по центру
+    width: fit-content; // Ширина по содержимому
+  }
+
+
+
   .evolution-tree__item {
       font-size: 1.2rem;
       color: #ffffff;
