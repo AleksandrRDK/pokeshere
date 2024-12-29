@@ -1,0 +1,36 @@
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .filter-button {
+    background-color: #333;
+    border: 2px solid #ff5252;
+    border-radius: 8px;
+    padding: 8px 15px;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(255, 82, 82, 0.7);
+    }
+
+    &.selected {
+      background-color: #ff5252;
+      border-color: #ff8a8a;
+    }
+
+    .filter-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }

@@ -1,0 +1,227 @@
+.evolution-tree {
+  text-align: center;
+  margin: 20px 0;
+  color: #ffffff;
+
+  h2 {
+      font-size: 1.5rem;
+      color: #ff5252;
+  }
+
+  ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  .evolution-tree__item {
+      font-size: 1.2rem;
+      color: #ffffff;
+      padding: 15px;
+      border: 2px solid #ff5252;
+      margin: 20px auto;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: fit-content;
+
+      position: relative;
+
+      &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: url('../../../../public/img/tree.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          filter: blur(5px);
+          z-index: -1;
+          border-radius: 10px;
+      }
+
+      &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 2px;
+          height: 30px;
+          background-color: #ff5252;
+          left: 50%;
+          bottom: -30px;
+          transform: translateX(-50%);
+          z-index: -1;
+      }
+
+      &:last-child::after {
+          display: none;
+      }
+  }
+
+  .evolution-tree__image-container {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #2c3e50;
+      padding: 10px;
+      box-sizing: border-box;
+  }
+
+  .evolution-tree__image {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .evolution-tree__name__wrapper{
+    position: relative;
+    display: inline-block;
+  }
+  .evolution-tree__name {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff5252;
+      border: 2px solid #ff5252;
+      padding: 5px 10px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 10px;
+  }
+  .evolution-tree__name__bg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #000000;
+      opacity: 0.5;
+      filter: blur(10px);
+      z-index: -1;
+      border-radius: 10px;
+      pointer-events: none;
+  }
+
+  .evolution-tree__types {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      gap: 10px;
+
+      .evolution-tree__type {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          color: #ffffff;
+
+          img {
+              width: 25px;
+              height: 25px;
+          }
+      }
+  }
+
+  .evolution-tree__stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 15px;
+
+      .evolution-tree__stat {
+          text-align: center;
+          display: flex;
+          gap: 8px;
+          justify-content: flex-start;
+          align-items: center;
+          color: #ffffff;
+
+          img {
+              width: 25px;
+              height: 25px;
+          }
+      }
+  }
+
+  .evolution-tree__changes {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #ffcc00;
+      padding: 15px;
+      border: 2px solid #ff5252;
+      border-radius: 10px;
+      position: relative;
+      display: inline-block;
+
+      &__bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #000000;
+          opacity: 0.5;
+          filter: blur(10px);
+          z-index: -1;
+          border-radius: 10px;
+          pointer-events: none;
+      }
+
+      h4 {
+          font-size: 1.2rem;
+          color: #ff5252;
+          z-index: 1;
+          position: relative;
+      }
+
+      ul {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          align-items: center;
+          z-index: 1;
+          position: relative;
+          margin: 0;
+      }
+
+      .evolution-tree__change {
+          display: flex;
+      }
+  }
+
+  .evolution-tree__arrow {
+    display: block;
+    font-size: 3rem;
+    color: #ff5252;  // Стандартный цвет стрелки (красный)
+    margin: 20px 0;
+    text-shadow: 0px 0px 10px rgba(255, 82, 82, 0.9), 0px 0px 20px rgba(255, 82, 82, 0.6);  // Светящаяся тень для стрелки
+    padding: 10px;
+    border-radius: 50%;  // Округлые края
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #2c3e50;  // Темный фон для контраста
+    border: 2px solid #ff5252;  // Красная обводка, чтобы выделить
+    box-shadow: 0px 0px 15px rgba(255, 82, 82, 0.7);  // Слабая тень, чтобы стрелка выделялась
+
+    /* Дополнительные стили для улучшения видимости */
+    filter: drop-shadow(0px 0px 5px #ff5252);  // Тень по краям для увеличения контраста
+}
+
+
+  .evolution-tree__empty {
+      font-size: 1.2rem;
+      color: #cccccc;
+  }
+}

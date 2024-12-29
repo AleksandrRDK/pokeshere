@@ -1,0 +1,32 @@
+.evolution-selector {
+  text-align: center;
+  margin: 20px 0;
+
+  h2 {
+    font-size: 1.5rem;
+    color: #ff4c4c; // Красный акцент
+  }
+
+  .pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .pokemon-button {
+    background-color: #1e1e1e; // Тёмный фон
+    color: #ff4c4c; // Красный текст
+    border: 1px solid #ff4c4c; // Красная рамка
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: #ff4c4c; // Красный фон
+      color: #1e1e1e; // Тёмный текст
+    }
+  }
+}
