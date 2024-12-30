@@ -16,6 +16,16 @@ export interface PokemonDetails {
   abilities: string[];
   stats: { name: string; value: number }[];
 }
+export interface PokemonComparisonDetails {
+  id: number;
+  name: string;
+  image: string;
+  types: string[];
+  abilities: string[];
+  stats: { name: string; value: number }[];
+  weight: number; // Вес покемона
+  height: number; // Рост покемона
+}
 
 export interface RandomPokemon extends PokemonDetails {
   description: string;
@@ -133,5 +143,30 @@ export const fetchEvolutionChain = async (chainId: number): Promise<PokemonDetai
   } catch (error) {
     console.error(`Error fetching evolution chain with ID ${chainId}:`, error);
     throw new Error(`Failed to fetch evolution chain with ID ${chainId}`);
+  }
+};
+
+export const fetchPokemonForComparison = async (nameOrId: string): Promise<PokemonComparisonDetails> => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/pokemon/${nameOrId}`);
+
+    const { id, name, sprites, types, abilities, stats, weight, height } = response.data;
+
+    return {
+      id,
+      name,
+      image: sprites.front_default,
+      types: types.map((type: { type: { name: string } }) => type.type.name),
+      abilities: abilities.map((ability: { ability: { name: string } }) => ability.ability.name),
+      stats: stats.map((stat: { stat: { name: string }, base_stat: number }) => ({
+        name: stat.stat.name,
+        value: stat.base_stat,
+      })),
+      weight,
+      height,
+    };
+  } catch (error) {
+    console.error(`Error fetching pokemon (${nameOrId}):`, error);
+    throw new Error(`Failed to fetch pokemon (${nameOrId}).`);
   }
 };

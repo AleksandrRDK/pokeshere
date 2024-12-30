@@ -11,6 +11,8 @@ import EvolutionSelector from '../Evolution/EvolutionSelector/EvolutionSelector'
 import EvolutionTree from '../Evolution/EvolutionTree/EvolutionTree';
 import { fetchPokemonEvolutionDetails, fetchEvolutionChain, PokemonDetails } from '../../api/pokemonApi';
 
+import PokemonComparison from '../Comparison/PokemonComparison/PokemonComparison';
+
 
 function App() {
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -38,6 +40,8 @@ function App() {
     }
   };
 
+
+
   return (
     <div className="container">
       <Navigation />
@@ -49,9 +53,11 @@ function App() {
       <PokemonList searchQuery={searchQuery} filterQuery={filterQuery} /> */}
 
       {/* Компоненты цепочки эволюции */}
-      <EvolutionSelector onSelect={handleSelectPokemon} />
+      {/* <EvolutionSelector onSelect={handleSelectPokemon} />
       {error && <p className="error-message">{error}</p>}
-      <EvolutionTree evolutionChain={evolutionChain} />
+      <EvolutionTree evolutionChain={evolutionChain} /> */}
+
+        <PokemonComparison/>
     </div>
   );
 }
