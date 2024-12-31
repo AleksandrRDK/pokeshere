@@ -52,11 +52,12 @@ function App() {
       <Filters onFilter={handleFilter} />
       <PokemonList searchQuery={searchQuery} filterQuery={filterQuery} /> */}
 
-      {/* Компоненты цепочки эволюции */}
+      {/* Компоненты 2 страницы */}
       {/* <EvolutionSelector onSelect={handleSelectPokemon} />
       {error && <p className="error-message">{error}</p>}
       <EvolutionTree evolutionChain={evolutionChain} /> */}
 
+        {/* компонент 3 страницы */}
         <PokemonComparison/>
     </div>
   );

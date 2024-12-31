@@ -170,3 +170,21 @@ export const fetchPokemonForComparison = async (nameOrId: string): Promise<Pokem
     throw new Error(`Failed to fetch pokemon (${nameOrId}).`);
   }
 };
+
+export const fetchRandomPokemons = async (count: number, maxId: number): Promise<{ id: number; name: string }[]> => {
+  const randomIds = Array.from({ length: count }, () => Math.floor(Math.random() * maxId) + 1);
+
+  try {
+    const responses = await Promise.all(
+      randomIds.map((id) => axios.get(`${API_BASE_URL}/pokemon/${id}`))
+    );
+
+    return responses.map((response) => ({
+      id: response.data.id,
+      name: response.data.name,
+    }));
+  } catch (error) {
+    console.error('Error fetching random pokemons:', error);
+    throw new Error('Failed to fetch random pokemons');
+  }
+};

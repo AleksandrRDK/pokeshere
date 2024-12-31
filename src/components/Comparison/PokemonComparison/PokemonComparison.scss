@@ -1,162 +1,266 @@
-.pok-comparsion{
-    margin-top: 20px;
-    text-align: center;
-    padding: 20px;
-    width: 500px;
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5),
-              0 0 10px rgba(255, 82, 82, 0.8),
-              0 0 20px rgba(255, 82, 82, 0.6),
-              0 0 30px rgba(255, 82, 82, 0.4);
-    .pokemon-list {
-        margin-top: 15px;
+.pokemon{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &__comparison, &__select{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        .pokemon__wrapper{
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            width: 500px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5),
+                      0 0 10px rgba(255, 82, 82, 0.8),
+                      0 0 20px rgba(255, 82, 82, 0.6),
+                      0 0 30px rgba(255, 82, 82, 0.4);
+            .pokemon-list {
+                margin-top: 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                &__targeted, &__random{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                }
+                &__btn{
+                    background-color: #1e1e1e; // Тёмный фон
+                    color: #ff4c4c; // Красный текст
+                    border: 1px solid #ff4c4c; // Красная рамка
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: transform 0.2s, background-color 0.3s;
+
+                    &:hover {
+                    transform: scale(1.1);
+                    background-color: #ff4c4c; // Красный фон
+                    color: #1e1e1e; // Тёмный текст
+                    }
+                }
+            }
+            .search-bar {
+                margin: 20px 0;
+                input {
+                  padding: 8px 16px;
+                  border: 2px solid #ff4c4c;
+                  border-radius: 4px;
+                  background-color: #1e1e1e;
+                  color: #ff4c4c;
+                  font-size: 1rem;
+                  width: 100%;
+                  max-width: 300px;
+                  transition: background-color 0.3s;
+                  &:focus {
+                    background-color: #2a2a2a;
+                    outline: none;
+                    border-color: #ff4c4c;
+                  }
+                }
+                button {
+                  padding: 8px 16px;
+                  margin-left: 10px;
+                  background-color: #ff4c4c;
+                  border: none;
+                  color: white;
+                  cursor: pointer;
+                  border-radius: 4px;
+                  transition: background-color 0.3s;
+
+                  &:hover {
+                    background-color: #e43e3e;
+                  }
+                }
+            }
+            .pokemon{
+                &__main{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                &__img{
+                    width: 150px;
+                    height: 150px;
+                }
+                &__name {
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: #ff5252;
+                    border: 2px solid #ff5252;
+                    padding: 5px 10px;
+                    border-radius: 8px;
+                    display: inline-block;
+                }
+                &__parameters{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    padding: 15px;
+                    font-family: 'Press Start 2P', cursive;
+                    font-size: 18px;
+                    text-align: center;
+
+                    p {
+                        margin: 0;
+                    }
+
+                    p:first-of-type {
+                        color: #6ca5ed;
+                    }
+
+                    p:last-of-type {
+                        color: #ff6b6b;
+                    }
+                }
+                &__abilities{
+                    display: flex;
+                    align-items: center;
+                    font-size: 18px;
+                    gap: 10px;
+                    color: #ffffff;
+                    margin: 10px 0;
+                    font-style: italic;
+                    line-height: 1.5;
+                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                    padding: 10px 15px;
+                }
+                &__types{
+                    display: flex;
+                    align-items: center;
+                    font-size: 18px;
+                    gap: 10px;
+                    color: #ffffff;
+                    margin: 10px 0;
+                    font-style: italic;
+                    line-height: 1.5;
+                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                    padding: 10px 15px;
+                }
+                &__type{
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    img {
+                      width: 40px;
+                      height: 40px;
+                    }
+                }
+                &__stats{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 15px;
+                }
+                &__stat{
+                    text-align: center;
+                    display: flex;
+                    gap: 8px;
+                    justify-content: flex-start;
+                    align-items: center;
+                    color: #ffffff;
+
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+    .comparison {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
-        gap: 10px;
+        align-items: center;
+        margin-top: 20px;
         &__btn{
-            background-color: #1e1e1e; // Тёмный фон
-            color: #ff4c4c; // Красный текст
-            border: 1px solid #ff4c4c; // Красная рамка
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.3s;
-
-            &:hover {
-            transform: scale(1.1);
-            background-color: #ff4c4c; // Красный фон
-            color: #1e1e1e; // Тёмный текст
-            }
-        }
-    }
-    .search-bar {
-        margin: 20px 0;
-        input {
-          padding: 8px 16px;
-          border: 2px solid #ff4c4c;
-          border-radius: 4px;
-          background-color: #1e1e1e;
-          color: #ff4c4c;
-          font-size: 1rem;
-          width: 100%;
-          max-width: 300px;
-          transition: background-color 0.3s;
-          &:focus {
-            background-color: #2a2a2a;
-            outline: none;
-            border-color: #ff4c4c;
-          }
-        }
-        button {
-          padding: 8px 16px;
-          margin-left: 10px;
-          background-color: #ff4c4c;
-          border: none;
-          color: white;
-          cursor: pointer;
-          border-radius: 4px;
-          transition: background-color 0.3s;
-
-          &:hover {
-            background-color: #e43e3e;
-          }
-        }
-    }
-    .pokemon{
-        &__main{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        &__img{
-            width: 150px;
-            height: 150px;
-        }
-        &__name {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ff5252;
-            border: 2px solid #ff5252;
-            padding: 5px 10px;
+            padding: 10px 20px;
+            background-color: #ffcc01; /* Ярко-желтый акцент */
+            border: 2px solid #ff6b6b; /* Красный обвод */
             border-radius: 8px;
-            display: inline-block;
+            font-family: 'Press Start 2P', cursive; /* Пиксельный стиль шрифта */
+            font-size: 24px;
+            color: #2e2e2e; /* Темный текст */
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            &:hover{
+                background-color: #ff6b6b; /* Красный акцент при наведении */
+                color: #fff; /* Белый текст */
+                transform: scale(1.05); /* Небольшое увеличение кнопки */
+            }
+            &:active{
+                transform: scale(0.95); /* Небольшое уменьшение при нажатии */
+                background-color: #d43f3f;
+            }
         }
-        &__parameters{
+        &__details {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 15px;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 18px;
-            text-align: center;
+            flex-wrap: wrap;
+            align-items: stretch;
+            justify-content: center;
+            gap: 12px; // Увеличен промежуток для улучшения визуального восприятия
+        }
 
-            p {
-                margin: 0;
+        .stat {
+            &__comparison {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background: linear-gradient(145deg, #2c2c2c, #3a3a3a); // Градиент для фона
+                padding: 24px; // Увеличенные отступы
+                border-radius: 12px; // Более заметные закругления
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); // Более глубокая тень
+                border: 1px solid #ff0000; // Красная рамка в стиле покемонов
+
+                transition: box-shadow 0.3s ease, border-color 0.3s ease; // Плавная анимация изменений
+                &:hover {
+                    box-shadow: 0 0 15px 4px rgba(255, 0, 0, 0.8); // Красное свечение
+                    border-color: rgba(255, 0, 0, 0.8); // Подсветка рамки
+                }
+
+                &__wrapper {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center; // Распределение элементов по краям
+                    gap: 5px;
+                }
             }
 
-            p:first-of-type {
-                color: #6ca5ed;
+            &__icon {
+                width: 50px; // Увеличен размер для лучшего восприятия
+                height: 50px;
+                filter: drop-shadow(0 2px 4px rgba(255, 0, 0, 0.5)); // Красная тень для акцента
             }
 
-            p:last-of-type {
-                color: #ff6b6b;
+            &__name {
+                font-weight: bold;
+                font-size: 1.1rem; // Чуть больше для выделения
+                color: #ff5252; // Красный акцент
+                text-transform: uppercase; // Заглавные буквы
             }
-        }
-        &__abilities{
-            display: flex;
-            align-items: center;
-            font-size: 18px;
-            gap: 10px;
-            color: #ffffff;
-            margin: 10px 0;
-            font-style: italic;
-            line-height: 1.5;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            padding: 10px 15px;
-        }
-        &__types{
-            display: flex;
-            align-items: center;
-            font-size: 18px;
-            gap: 10px;
-            color: #ffffff;
-            margin: 10px 0;
-            font-style: italic;
-            line-height: 1.5;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            padding: 10px 15px;
-        }
-        &__type{
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
 
-            img {
-              width: 40px;
-              height: 40px;
+            &__values {
+                font-size: 1rem;
+                color: #e0e0e0; // Светло-серый текст
+                font-weight: 500; // Полужирный текст для акцента
             }
         }
-        &__stats{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        &__stat{
-            text-align: center;
-            display: flex;
-            gap: 8px;
-            justify-content: flex-start;
-            align-items: center;
-            color: #ffffff;
-
-            img {
-                width: 25px;
-                height: 25px;
-            }
-        }
+    }
+    &__comparison{
+        gap: 25px;
+        justify-content: space-around;
     }
 }
