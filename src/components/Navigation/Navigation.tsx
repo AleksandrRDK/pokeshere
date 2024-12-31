@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navigation.scss';
 
 const Navigation: React.FC = () => {
   return (
-    <div className="navigation">
-      <a href="#page1" className="nav-link">Page 1</a>
-      <a href="#page2" className="nav-link">Page 2</a>
-      <a href="#page3" className="nav-link">Page 3</a>
-    </div>
+    <nav className="navigation">
+      <Link to="/" className="nav-link">Encyclopedia</Link>
+      <Link to="/evolution" className="nav-link">Evolution</Link>
+      <Link to="/comparison" className="nav-link">Comparison</Link>
+    </nav>
   );
 };
 

@@ -1,65 +1,24 @@
 import './App.scss';
-import { useState } from 'react';
-
 import Navigation from '../Navigation/Navigation';
-import RandomPokemon from '../Encyclopedia/RandomPokemon/RandomPokemon';
-import SearchBar from '../Encyclopedia/SearchBar/SearchBar';
-import Filters from '../Encyclopedia/Filters/Filters';
-import PokemonList from '../Encyclopedia/PokemonList/PokemonList';
 
-import EvolutionSelector from '../Evolution/EvolutionSelector/EvolutionSelector';
-import EvolutionTree from '../Evolution/EvolutionTree/EvolutionTree';
-import { fetchPokemonEvolutionDetails, fetchEvolutionChain, PokemonDetails } from '../../api/pokemonApi';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
-import PokemonComparison from '../Comparison/PokemonComparison/PokemonComparison';
-
+import EncyclopediaPage from '../../pages/EncyclopediaPage';
+import EvolutionPage from '../../pages/EvolutionPage';
+import ComparisonPage from '../../pages/ComparisonPage';
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  const [filterQuery, setFilterQuery] = useState<string[]>([]);
-  const [evolutionChain, setEvolutionChain] = useState<PokemonDetails[]>([]);
-  const [error, setError] = useState<string | null>(null); // Для отображения ошибок
-
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-  };
-
-  const handleFilter = (filter: string[]) => {
-    setFilterQuery(filter);
-  };
-
-  // Обработчик выбора покемона для цепочки эволюции
-  const handleSelectPokemon = async (pokemonName: string) => {
-    try {
-      setError(null); // Сбрасываем предыдущую ошибку
-      const chainId = await fetchPokemonEvolutionDetails(pokemonName); // Получаем ID цепочки эволюции
-      const chainData = await fetchEvolutionChain(chainId); // Получаем данные цепочки
-      setEvolutionChain(chainData); // Сохраняем данные в состоянии
-    } catch (error: any) {
-      setError(error.message || 'Failed to load evolution data'); // Устанавливаем сообщение об ошибке
-    }
-  };
-
-
-
   return (
-    <div className="container">
-      <Navigation />
-
-      {/* Компоненты первой страницы */}
-      {/* <RandomPokemon />
-      <SearchBar onSearch={handleSearch} />
-      <Filters onFilter={handleFilter} />
-      <PokemonList searchQuery={searchQuery} filterQuery={filterQuery} /> */}
-
-      {/* Компоненты 2 страницы */}
-      {/* <EvolutionSelector onSelect={handleSelectPokemon} />
-      {error && <p className="error-message">{error}</p>}
-      <EvolutionTree evolutionChain={evolutionChain} /> */}
-
-        {/* компонент 3 страницы */}
-        <PokemonComparison/>
-    </div>
+    <Router>
+      <div className="container">
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<EncyclopediaPage />} />
+          <Route path="/evolution" element={<EvolutionPage />} />
+          <Route path="/comparison" element={<ComparisonPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
