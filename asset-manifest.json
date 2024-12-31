@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/pokeshere/static/css/main.541fc763.css",
+    "main.js": "/pokeshere/static/js/main.b2c4a9ca.js",
+    "static/media/tree.png": "/pokeshere/static/media/tree.aff820388e3d230afb71.png",
+    "index.html": "/pokeshere/index.html",
+    "main.541fc763.css.map": "/pokeshere/static/css/main.541fc763.css.map",
+    "main.b2c4a9ca.js.map": "/pokeshere/static/js/main.b2c4a9ca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.541fc763.css",
+    "static/js/main.b2c4a9ca.js"
+  ]
+}
