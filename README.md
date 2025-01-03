@@ -1,46 +1,84 @@
-# Getting Started with Create React App
+# Pokeshere
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Pokeshere** — это веб-приложение, посвященное миру покемонов. Оно позволяет искать, фильтровать, изучать эволюции покемонов и сравнивать их. Проект создан с использованием современных технологий и API для демонстрации навыков разработки.
 
-## Available Scripts
+## 🚀 Демо
 
-In the project directory, you can run:
+Приложение доступно по ссылке: [Pokeshere](https://AleksandrRDK.github.io/pokeshere)
 
-### `npm start`
+## Скриншоты
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Десктопная версия
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Десктопная версия](./screenshots/desctop.jpg)
 
-### `npm test`
+### Мобильная версия
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Мобильная версия](./screenshots/mobile.jpg)
 
-### `npm run build`
+## 📚 Возможности
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Энциклопедия покемонов**:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Отображение списка покемонов с возможностью поиска и фильтрации.
+  - При нажатии на покемона перебрасывает на его личную страницу.
+  - Загрузка покемонов порциями с помощью кнопки "Load More".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Дерево эволюций**:
 
-### `npm run eject`
+  - Отображение цепочек эволюции для выбранного покемона.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Сравнение покемонов**:
+  - Выбор двух покемонов для сравнения их характеристик.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠 Используемые технологии
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Основной стек:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **React** — библиотека для создания пользовательских интерфейсов.
+- **TypeScript** — для типизации и повышения надежности кода.
+- **React Router** — для маршрутизации между страницами.
+- **Axios** — для работы с API запросами.
+- **Scss** — для стилизации и работы с CSS-переменными.
 
-## Learn More
+### Вспомогательные инструменты:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Create React App (CRA)** — для создания и конфигурации React-приложения.
+- **gh-pages** — для деплоя приложения на GitHub Pages.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### API:
+
+- **PokéAPI** — для получения данных о покемонах, их эволюциях и характеристиках.
+
+## 🔧 Установка и запуск
+
+1. Склонируйте репозиторий:
+   ```bash
+   git clone https://github.com/AleksandrRDK/pokeshere.git
+   ```
+2. Перейдите в директорию проекта:
+   cd pokeshere
+3. Установите зависимости:
+   npm install
+4. Запустите проект в режиме разработки:
+   npm start
+5. Откройте в браузере: http://localhost:3000
+
+## Планы по улучшению
+
+- Добавить анимацию
+- После сравнения подсвечивать ник победителя зеленым
+
+## Вклад в проект
+
+Если вы хотите внести свой вклад, выполните следующие шаги:
+
+1. **Сделайте форк репозитория** — создайте копию репозитория в вашем аккаунте.
+2. **Создайте новую ветку** (`git checkout -b feature/new-feature`).
+3. **Закоммитьте изменения** (`git commit -m 'Add new feature'`).
+4. **Запушьте изменения** (`git push origin feature/new-feature`).
+5. **Создайте Pull Request** в оригинальный репозиторий.
+
+## Автор
+
+- **AleksandrRDK**

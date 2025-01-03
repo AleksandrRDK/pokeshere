@@ -6,6 +6,19 @@
       gap: 20px;
     }
 
+    .no-pokemons {
+      color: #ffffff;
+      font-size: 20px;
+      text-align: center;
+      margin: 20px 0;
+      padding: 15px;
+      background: linear-gradient(90deg, rgb(30, 30, 30) 0%, rgb(50, 50, 50) 100%);
+      border: 2px solid #ff5252;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 82, 82, 0.5);
+      font-style: italic;
+    }
+
     .load-more {
       margin: 20px auto;
       display: block;

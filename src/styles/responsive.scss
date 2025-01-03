@@ -13,6 +13,12 @@
     }
 }
 
+@media (max-width: 375) {
+    .container{
+        max-width: 355px;
+    }
+}
+
 @media (max-width: 480px) {
     .container{
         max-width: 300px;
@@ -75,6 +81,9 @@
         }
         &__comparison{
             flex-direction: column;
+        }
+        .stat__comparison{
+            width: 100%;
         }
         &__wrapper{
             width: 100% !important;

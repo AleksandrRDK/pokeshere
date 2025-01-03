@@ -63,14 +63,14 @@ const PokemonList: React.FC<PokemonListProps> = ({ searchQuery, filterQuery }) =
   return (
     <div className="pokemon-list">
       <div className="cards">
-        {filteredPokemons.map((pokemon) => (
+        {filteredPokemons.length > 0 ? (filteredPokemons.map((pokemon) => (
           <PokemonCard
             key={pokemon.id}
             name={pokemon.name}
             image={pokemon.image}
             types={pokemon.types}
           />
-        ))}
+        ))) : (<div className="no-pokemons">No such Pokémon found</div>)}
       </div>
       {loading && <p>Loading...</p>}
       <button className="load-more" onClick={handleLoadMore} disabled={loading}>
