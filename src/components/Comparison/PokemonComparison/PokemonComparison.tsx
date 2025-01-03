@@ -124,7 +124,7 @@ const PokemonComparison = () => {
             setLoadingSec(true);
             setErrorSec(null);
             try {
-                const fetchedPokemons = await fetchPokemons(3);
+                const fetchedPokemons = await fetchPokemons(3, 10);
                 setPokemonsSec(
                     fetchedPokemons.map((pokemon) => ({
                         id: pokemon.id,
@@ -335,8 +335,8 @@ const PokemonComparison = () => {
                 )}
             </div>
             <div className="pokemon__comparison">
-                <div className="pokemon__wrapper">
-                    {searchedPokemon && (
+                {searchedPokemon && (
+                    <div className="pokemon__wrapper">
                         <div className="pokemon">
                             <div className="pokemon__main">
                                 <img src={searchedPokemon.image} alt={searchedPokemon.name} className="pokemon__img"/>
@@ -370,10 +370,10 @@ const PokemonComparison = () => {
                                 ))}
                             </div>
                         </div>
-                    )}
-                </div>
-                <div className="pokemon__wrapper">
-                    {searchedPokemonSec && (
+                    </div>
+                )}
+                {searchedPokemonSec && (
+                    <div className="pokemon__wrapper">
                         <div className="pokemon">
                             <div className="pokemon__main">
                                 <img src={searchedPokemonSec.image} alt={searchedPokemonSec.name} className="pokemon__img"/>
@@ -407,8 +407,8 @@ const PokemonComparison = () => {
                                 ))}
                             </div>
                         </div>
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
         </div>
     )

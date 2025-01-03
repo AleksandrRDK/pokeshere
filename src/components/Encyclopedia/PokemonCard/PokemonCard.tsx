@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import './PokemonCard.scss';
 
 interface PokemonCardProps {
@@ -30,8 +32,14 @@ const typeIcons: Record<string, string> = {
 };
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ name, image, types }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/pokemon/${name}`);
+  };
+
   return (
-    <div className="pokemon-card">
+    <div className="pokemon-card" onClick={() => {handleClick()}}>
       <img src={image} alt={name} className="pokemon-image" />
       <h3 className="pokemon-name">{name}</h3>
       <div className="pokemon-types">

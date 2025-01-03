@@ -1,0 +1,98 @@
+@media (max-width: 1024px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container{
+        max-width: 740px;
+    }
+    .pokemon__select{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container{
+        max-width: 300px;
+    }
+    .navigation{
+        flex-direction: column;
+        text-align: center;
+        margin-top: 0 !important;
+    }
+
+    .random-pokemon{
+        .pokemon-info{
+            flex-direction: column;
+            .pokemon-details{
+                box-sizing: border-box;
+                width: 100%;
+                .pokemon-types{
+                    flex-direction: column;
+                    border-left: none !important;
+                    background: none !important;
+                }
+            }
+        }
+    }
+    .pokemon-detail{
+        &__main{
+            align-items: center;
+        }
+        &__submain{
+            flex-direction: column;
+        }
+        &__abilities, &__types{
+            text-align: center;
+        }
+        &__stat{
+            justify-content: space-around !important;
+        }
+        &__stats{
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+    .evolution-tree{
+        &__stats{
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+    .pokemon{
+        .search-bar{
+            flex-direction: column;
+            gap: 8px;
+            input{
+                box-sizing: border-box;
+                width: 100%;
+            }
+            button{
+                margin: 0 !important;
+            }
+        }
+        &__comparison{
+            flex-direction: column;
+        }
+        &__wrapper{
+            width: 100% !important;
+            box-sizing: border-box;
+        }
+        &-list__targeted, &-list__random{
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+        &__abilities, &__types{
+            flex-direction: column;
+        }
+        &__stats{
+            grid-template-columns: 1fr !important;
+        }
+        &__stat{
+            justify-content: space-around !important;
+        }
+    }
+}

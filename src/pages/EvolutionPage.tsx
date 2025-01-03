@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { fetchPokemonEvolutionDetails, fetchEvolutionChain, PokemonDetails } from '../api/pokemonApi';
 
+import Navigation from "../components/Navigation/Navigation";
 import EvolutionSelector from "../components/Evolution/EvolutionSelector/EvolutionSelector";
 import EvolutionTree from "../components/Evolution/EvolutionTree/EvolutionTree";
 
@@ -22,6 +23,7 @@ const EvolutionPage = () => {
     };
     return (
         <>
+            <Navigation />
             <EvolutionSelector onSelect={handleSelectPokemon} />
             {error && <p className="error-message">{error}</p>}
             <EvolutionTree evolutionChain={evolutionChain} />
