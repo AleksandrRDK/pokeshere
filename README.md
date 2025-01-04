@@ -57,11 +57,17 @@
    git clone https://github.com/AleksandrRDK/pokeshere.git
    ```
 2. Перейдите в директорию проекта:
+   ```bash
    cd pokeshere
+   ```
 3. Установите зависимости:
+   ```bash
    npm install
+   ```
 4. Запустите проект в режиме разработки:
+   ```bash
    npm start
+   ```
 5. Откройте в браузере: http://localhost:3000
 
 ## Планы по улучшению
